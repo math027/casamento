@@ -26,9 +26,9 @@
   position: absolute; inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(45,34,32,0.25) 0%,
-    rgba(45,34,32,0.52) 45%,
-    rgba(45,34,32,0.72) 100%
+    rgba(13,31,60,0.35) 0%,
+    rgba(13,31,60,0.55) 45%,
+    rgba(13,31,60,0.78) 100%
   );
 }
 

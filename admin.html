@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área dos Noivos 💍</title>
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+<!-- ────────────────────────────────────────
+     LOGIN
+──────────────────────────────────────── -->
+<div id="login-screen">
+  <div class="login-box">
+    <span class="login-logo">M &amp; E</span>
+    <p class="login-subtitle">Área dos Noivos · Acesso restrito</p>
+    <input type="password" id="login-pwd" placeholder="Senha">
+    <button class="login-btn" onclick="doLogin()">Entrar</button>
+    <p class="login-error" id="login-error"></p>
+    <a class="login-back" href="index.html">← Voltar ao site</a>
+  </div>
+</div>
+
+<!-- ────────────────────────────────────────
+     ADMIN APP
+──────────────────────────────────────── -->
+<div id="admin-app">
+
+  <!-- Header -->
+  <div class="admin-header">
+    <div>
+      <div class="admin-header-title">Matheus &amp; Emmily</div>
+      <div class="admin-header-sub">Painel dos Noivos</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <a href="index.html" target="_blank" class="btn btn-outline btn-sm">🌐 Ver site</a>
+      <button class="admin-logout" onclick="doLogout()">Sair</button>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="admin-tabs">
+    <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">📊 Visão Geral</button>
+    <button class="tab-btn" data-tab="gifts" onclick="switchTab('gifts')">🎁 Presentes</button>
+    <button class="tab-btn" data-tab="reservations" onclick="switchTab('reservations')">📋 Reservas</button>
+    <button class="tab-btn" data-tab="manual" onclick="switchTab('manual')">📖 Manual</button>
+    <button class="tab-btn" data-tab="settings" onclick="switchTab('settings')">⚙️ Config</button>
+  </div>
+
+  <!-- ── OVERVIEW ── -->
+  <div class="tab-panel active" id="tab-overview">
+    <div class="panel-header">
+      <div>
+        <h2>Visão Geral</h2>
+        <p>Resumo do seu casamento em números</p>
+      </div>
+      <button class="btn btn-primary" onclick="renderAll()">🔄 Atualizar</button>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num" id="stat-total">0</div>
+        <div class="stat-label">Presentes cadastrados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-reserved">0</div>
+        <div class="stat-label">Presentes reservados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-available">0</div>
+        <div class="stat-label">Disponíveis</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-value">R$ 0</div>
+        <div class="stat-label">Valor reservado</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-manual">0</div>
+        <div class="stat-label">Cards no manual</div>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);padding:2rem;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--navy);margin-bottom:1rem;">Ações rápidas</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:0.8rem;">
+        <button class="btn btn-primary" onclick="switchTab('gifts'); openAddModal()">+ Adicionar presente</button>
+        <button class="btn btn-navy" onclick="switchTab('manual')">✏️ Editar manual</button>
+        <button class="btn btn-outline" onclick="switchTab('reservations')">📋 Ver reservas</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PRESENTES ── -->
+  <div class="tab-panel" id="tab-gifts">
+    <div class="panel-header">
+      <div>
+        <h2>Lista de Presentes</h2>
+        <p>Adicione, edite ou remova presentes da lista</p>
+      </div>
+      <button class="btn btn-primary" onclick="openAddModal()">+ Novo Presente</button>
+    </div>
+
+    <div class="gift-list" id="admin-gift-list"></div>
+  </div>
+
+  <!-- ── RESERVAS ── -->
+  <div class="tab-panel" id="tab-reservations">
+    <div class="panel-header">
+      <div>
+        <h2>Reservas</h2>
+        <p>Veja quais presentes foram reservados pelos convidados</p>
+      </div>
+      <button class="btn btn-outline" onclick="renderReservations()">🔄 Atualizar</button>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table class="reservations-table">
+        <thead>
+          <tr>
+            <th>Presente</th>
+            <th>Valor</th>
+            <th>Status</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="reservations-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── MANUAL ── -->
+  <div class="tab-panel" id="tab-manual">
+    <div class="panel-header">
+      <div>
+        <h2>Manual dos Convidados</h2>
+        <p>Configure as informações exibidas na seção do manual</p>
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+        <button class="btn btn-outline" onclick="addManualCard()">+ Novo Card</button>
+        <button class="btn btn-primary" onclick="publishManual()">✓ Salvar &amp; Publicar</button>
+      </div>
+    </div>
+    <div class="manual-editor-list" id="manual-editor-list"></div>
+  </div>
+
+  <!-- ── SETTINGS ── -->
+  <div class="tab-panel" id="tab-settings">
+    <div class="panel-header">
+      <div>
+        <h2>Configurações</h2>
+        <p>Senha de acesso e outras opções</p>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:2rem;max-width:520px;">
+      <div class="settings-section">
+        <h3>🔒 Alterar Senha</h3>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="form-group">
+            <label>Senha atual</label>
+            <input type="password" id="s-current" placeholder="Senha atual">
+          </div>
+          <div class="form-group">
+            <label>Nova senha</label>
+            <input type="password" id="s-new" placeholder="Mínimo 4 caracteres">
+          </div>
+          <div class="form-group">
+            <label>Confirmar nova senha</label>
+            <input type="password" id="s-confirm" placeholder="Repita a nova senha">
+          </div>
+          <button class="btn btn-primary" onclick="changePassword()">Salvar senha</button>
+        </div>
+      </div>
+
+      <div class="settings-section" style="border-top:3px solid var(--danger);">
+        <h3 style="color:var(--danger);">⚠️ Zona de Perigo</h3>
+        <p style="font-size:0.85rem;color:var(--text-light);margin:0.8rem 0 1.2rem;">Isso vai apagar todos os presentes, reservas e manual. Use com cuidado.</p>
+        <button class="btn btn-danger" onclick="resetAllData()">🗑 Redefinir todos os dados</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ────────────────────────────────────────
+     MODAL — GIFT FORM
+──────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-gift">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-gift-title">Novo Presente</h3>
+      <button class="modal-close" onclick="closeModal('modal-gift')">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="gift-form" onsubmit="return false">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Emoji</label>
+            <input type="text" id="f-emoji" placeholder="🎁" maxlength="4">
+          </div>
+          <div class="form-group">
+            <label>Badge / Etiqueta</label>
+            <input type="text" id="f-badge" placeholder="Essencial">
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:1rem;">
+          <label>Nome do presente *</label>
+          <input type="text" id="f-name" placeholder="Ex: Smart TV 55'">
+        </div>
+        <div class="form-row" style="margin-top:1rem;">
+          <div class="form-group">
+            <label>Categoria</label>
+            <input type="text" id="f-category" placeholder="Ex: Tecnologia">
+          </div>
+          <div class="form-group">
+            <label>Valor sugerido (R$)</label>
+            <input type="number" id="f-price" placeholder="Deixe vazio para 'à combinar'" min="0">
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:1rem;">
+          <label>Descrição</label>
+          <textarea id="f-desc" placeholder="Uma descrição divertida ou informativa..."></textarea>
+        </div>
+        <div class="form-group img-preview-wrap" style="margin-top:1rem;">
+          <label>URL da foto do produto</label>
+          <input type="url" id="f-img" placeholder="https://...">
+          <img id="img-preview" class="img-preview" src="" alt="Preview">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('modal-gift')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveGiftForm()">💾 Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

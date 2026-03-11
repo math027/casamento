@@ -3,14 +3,14 @@
    ══════════════════════════════════════ */
 
 #galeria {
-  background: var(--dark);
+  background: var(--navy);
   padding-bottom: 5.5rem;
 }
 
-#galeria .section-tag   { color: var(--rose-light); }
+#galeria .section-tag   { color: var(--sky); }
 #galeria .section-title { color: var(--white); }
 #galeria .gold-line {
-  background: linear-gradient(90deg, var(--rose), var(--gold));
+  background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
 }
 
 .gallery-grid {

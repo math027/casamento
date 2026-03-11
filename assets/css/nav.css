@@ -11,15 +11,15 @@ nav {
   align-items: center;
   gap: 2.5rem;
   padding: 1.1rem 2rem;
-  background: rgba(253,246,240,0.9);
+  background: rgba(240,247,255,0.93);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(200,169,126,0.22);
+  border-bottom: 1px solid rgba(91,159,232,0.25);
   transition: all 0.35s;
 }
 
 nav.scrolled {
   padding: 0.8rem 2rem;
-  box-shadow: 0 4px 24px rgba(201,137,106,0.1);
+  box-shadow: 0 4px 24px rgba(37,99,168,0.12);
 }
 
 nav a {
@@ -28,8 +28,8 @@ nav a {
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text);
-  opacity: 0.65;
+  color: var(--navy-mid);
+  opacity: 0.7;
   transition: opacity var(--transition), color var(--transition);
   position: relative;
 }
@@ -39,14 +39,14 @@ nav a::after {
   position: absolute;
   bottom: -3px; left: 0; right: 0;
   height: 1px;
-  background: var(--rose);
+  background: var(--blue-mid);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
-nav a:hover        { opacity: 1; color: var(--rose); }
+nav a:hover        { opacity: 1; color: var(--blue-mid); }
 nav a:hover::after { transform: scaleX(1); }
-nav a.active       { opacity: 1; color: var(--rose); }
+nav a.active       { opacity: 1; color: var(--blue-mid); }
 nav a.active::after{ transform: scaleX(1); }
 
 @media (max-width: 680px) {

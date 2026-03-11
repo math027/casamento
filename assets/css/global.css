@@ -5,23 +5,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-  --rose:         #c9896a;
-  --rose-dark:    #a86b50;
-  --rose-light:   #e8c4b0;
-  --rose-pale:    #f8ede8;
-  --gold:         #c8a97e;
-  --gold-light:   #e8d9c0;
-  --gold-pale:    #faf5ee;
-  --dark:         #2d2220;
-  --dark-mid:     #4a3728;
-  --cream:        #fdf6f0;
+  --navy:         #0d1f3c;
+  --navy-mid:     #1a3a6b;
+  --blue:         #2563a8;
+  --blue-mid:     #3a7bd5;
+  --blue-light:   #5b9fe8;
+  --sky:          #a8caf5;
+  --sky-pale:     #e8f2fd;
+  --sky-ultra:    #f0f7ff;
   --white:        #ffffff;
-  --text:         #4a3728;
-  --text-light:   #8a7060;
-  --shadow-soft:  0 8px 40px rgba(201,137,106,0.13);
-  --shadow-mid:   0 20px 60px rgba(201,137,106,0.18);
+  --text:         #0d1f3c;
+  --text-mid:     #2a4a72;
+  --text-light:   #5a7499;
+  --shadow-soft:  0 8px 40px rgba(37,99,168,0.12);
+  --shadow-mid:   0 20px 60px rgba(13,31,60,0.18);
   --radius:       2px;
   --transition:   0.3s ease;
+  /* compat aliases used in sections */
+  --rose:         var(--blue-mid);
+  --rose-dark:    var(--blue);
+  --rose-light:   var(--sky);
+  --rose-pale:    var(--sky-pale);
+  --gold:         var(--blue-light);
+  --gold-light:   var(--sky);
+  --gold-pale:    var(--sky-ultra);
+  --dark:         var(--navy);
+  --dark-mid:     var(--navy-mid);
+  --cream:        var(--sky-ultra);
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -104,7 +114,7 @@ section { padding: 5.5rem 2rem; }
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--rose);
+  background: var(--navy-mid);
   color: #fff;
   padding: 0.85rem 2rem;
   font-family: 'Cormorant Garamond', serif;
@@ -114,6 +124,7 @@ section { padding: 5.5rem 2rem; }
   animation: fadeUp 0.4s ease;
   white-space: nowrap;
   box-shadow: var(--shadow-mid);
+  border-left: 3px solid var(--blue-light);
 }
 
 /* ── Lightbox ── */

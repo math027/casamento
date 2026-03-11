@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════
-   PRESENTES · estilo loja virtual
+   PRESENTES · loja virtual — tema azul
    ══════════════════════════════════════ */
 
 #presentes { background: var(--white); }
@@ -23,23 +23,14 @@
   gap: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 1.2rem;
-  border-bottom: 1px solid var(--rose-light);
+  border-bottom: 1px solid var(--sky);
 }
-
-.store-count {
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-light);
-}
-
-.store-count strong { color: var(--rose); }
+.store-count { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); }
+.store-count strong { color: var(--blue-mid); }
 
 .store-cart-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  background: var(--dark);
+  display: flex; align-items: center; gap: 0.55rem;
+  background: var(--navy);
   color: #fff;
   border: none;
   padding: 0.65rem 1.4rem;
@@ -50,10 +41,10 @@
   font-family: 'Lato', sans-serif;
   transition: background var(--transition);
 }
-.store-cart-btn:hover { background: var(--rose); }
+.store-cart-btn:hover { background: var(--blue-mid); }
 
 .cart-badge {
-  background: var(--rose);
+  background: var(--blue-mid);
   color: #fff;
   font-size: 0.6rem;
   font-weight: 700;
@@ -73,7 +64,7 @@
 /* ── Product Card ── */
 .gift-card {
   background: var(--white);
-  border: 1px solid #ecddd5;
+  border: 1px solid #c5d9f0;
   transition: all 0.35s;
   position: relative;
   overflow: hidden;
@@ -81,16 +72,16 @@
   flex-direction: column;
 }
 .gift-card:hover {
-  border-color: var(--rose);
-  box-shadow: 0 16px 48px rgba(201,137,106,0.16);
+  border-color: var(--blue-mid);
+  box-shadow: 0 16px 48px rgba(37,99,168,0.14);
   transform: translateY(-4px);
 }
 
-/* Tag badge */
+/* Badge */
 .gift-badge {
   position: absolute;
   top: 1rem; left: 0;
-  background: linear-gradient(90deg, var(--rose), var(--gold));
+  background: linear-gradient(90deg, var(--navy-mid), var(--blue-mid));
   color: #fff;
   font-size: 0.58rem;
   letter-spacing: 0.2em;
@@ -107,13 +98,13 @@
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(248,237,232,0.82);
+  background: rgba(232,242,253,0.8);
   z-index: 5;
   backdrop-filter: blur(2px);
 }
 .gift-reserved-stamp .stamp {
-  border: 3px solid var(--rose);
-  color: var(--rose);
+  border: 3px solid var(--blue-mid);
+  color: var(--blue-mid);
   padding: 0.6rem 1.5rem;
   font-family: 'Lato', sans-serif;
   font-size: 0.7rem;
@@ -121,7 +112,6 @@
   letter-spacing: 0.25em;
   text-transform: uppercase;
   transform: rotate(-12deg);
-  opacity: 0.92;
 }
 .gift-card.reserved .gift-reserved-stamp { display: flex; }
 
@@ -130,13 +120,14 @@
   width: 100%;
   aspect-ratio: 4/3;
   overflow: hidden;
-  background: var(--rose-pale);
+  background: var(--sky-pale);
   position: relative;
 }
-
 .gift-img-wrap img {
   width: 100%; height: 100%;
   object-fit: cover;
+  min-height: 180px;
+  display: block;
   transition: transform 0.55s ease;
 }
 .gift-card:hover .gift-img-wrap img { transform: scale(1.06); }
@@ -145,11 +136,11 @@
   position: absolute;
   bottom: 0.7rem; right: 0.8rem;
   font-size: 1.8rem;
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.92);
   border-radius: 50%;
   width: 2.6rem; height: 2.6rem;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(37,99,168,0.15);
   z-index: 2;
 }
 
@@ -161,23 +152,20 @@
   flex-direction: column;
   gap: 0.55rem;
 }
-
 .gift-category {
   font-size: 0.62rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--blue-light);
   font-weight: 400;
 }
-
 .gift-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.18rem;
   font-weight: 600;
-  color: var(--dark);
+  color: var(--navy);
   line-height: 1.35;
 }
-
 .gift-desc {
   font-size: 0.82rem;
   color: var(--text-light);
@@ -191,42 +179,23 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem 1.5rem;
-  border-top: 1px solid var(--rose-pale);
+  border-top: 1px solid var(--sky-pale);
   gap: 0.8rem;
 }
-
-.gift-price {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.gift-price-label {
-  font-size: 0.58rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-light);
-}
-
+.gift-price { display: flex; flex-direction: column; gap: 0.1rem; }
+.gift-price-label { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); }
 .gift-price-value {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--dark);
+  color: var(--navy);
   line-height: 1;
 }
-
-.gift-price-value.symbolic {
-  font-size: 1.1rem;
-  color: var(--rose);
-  font-style: italic;
-}
+.gift-price-value.symbolic { font-size: 1.1rem; color: var(--blue-mid); font-style: italic; }
 
 .gift-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: var(--rose);
+  display: flex; align-items: center; gap: 0.4rem;
+  background: var(--blue-mid);
   color: #fff;
   border: none;
   padding: 0.7rem 1.2rem;
@@ -238,17 +207,33 @@
   transition: all var(--transition);
   white-space: nowrap;
 }
-.gift-btn:hover { background: var(--rose-dark); }
-.gift-card.reserved .gift-btn {
-  background: #ccc;
-  cursor: default;
+.gift-btn:hover { background: var(--navy-mid); }
+
+/* Cancel button when reserved */
+.gift-cancel-btn {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: var(--blue-mid);
+  border: 1.5px solid var(--blue-mid);
+  padding: 0.7rem 1.2rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
 }
-.gift-card.reserved .gift-btn:hover { background: #ccc; }
+.gift-cancel-btn:hover { background: var(--sky-pale); color: var(--navy); }
+.gift-card.reserved .gift-btn        { display: none; }
+.gift-card.reserved .gift-cancel-btn { display: flex; }
 
 /* ── Cart Modal ── */
 .cart-modal-overlay {
   position: fixed; inset: 0;
-  background: rgba(45,34,32,0.5);
+  background: rgba(13,31,60,0.55);
   z-index: 8000;
   display: none;
   align-items: flex-start;
@@ -279,129 +264,68 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--rose-light);
+  border-bottom: 1px solid var(--sky);
 }
-
-.cart-header h3 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2rem;
-  color: var(--dark);
-}
-
+.cart-header h3 { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--navy); }
 .cart-close {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+  background: none; border: none;
+  font-size: 1.5rem; cursor: pointer;
   color: var(--text-light);
   transition: color var(--transition);
 }
-.cart-close:hover { color: var(--rose); }
+.cart-close:hover { color: var(--blue-mid); }
 
 .cart-items { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
 
 .cart-item {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  gap: 1rem; align-items: center;
   padding: 1rem;
-  border: 1px solid var(--rose-light);
-  background: var(--rose-pale);
+  border: 1px solid var(--sky);
+  background: var(--sky-pale);
 }
-
-.cart-item img {
-  width: 64px; height: 64px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
+.cart-item img { width: 64px; height: 64px; object-fit: cover; flex-shrink: 0; }
 .cart-item-info { flex: 1; }
-.cart-item-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--dark);
-}
-.cart-item-price {
-  font-size: 0.8rem;
-  color: var(--rose);
-  margin-top: 0.25rem;
-}
-
+.cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--navy); }
+.cart-item-price { font-size: 0.8rem; color: var(--blue-mid); margin-top: 0.25rem; }
 .cart-remove {
-  background: none;
-  border: none;
-  color: var(--text-light);
-  cursor: pointer;
-  font-size: 1rem;
+  background: none; border: none; color: var(--text-light);
+  cursor: pointer; font-size: 1rem;
   transition: color var(--transition);
 }
-.cart-remove:hover { color: var(--rose); }
+.cart-remove:hover { color: #c0392b; }
 
-.cart-empty {
-  text-align: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  color: var(--text-light);
-  padding: 3rem 0;
-}
+.cart-empty { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--text-light); padding: 3rem 0; }
 
 .cart-total {
   padding-top: 1rem;
-  border-top: 1px solid var(--rose-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-top: 1px solid var(--sky);
+  display: flex; justify-content: space-between; align-items: center;
 }
-.cart-total span {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-light);
-}
-.cart-total strong {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  color: var(--dark);
-}
+.cart-total span { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-light); }
+.cart-total strong { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--navy); }
 
 .cart-pix {
-  background: var(--rose-pale);
-  border-left: 3px solid var(--rose);
+  background: var(--sky-pale);
+  border-left: 3px solid var(--blue-mid);
   padding: 1rem 1.2rem;
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.95rem;
-  color: var(--text);
+  color: var(--text-mid);
   line-height: 1.65;
 }
 
 /* ── Pix Banner ── */
 .pix-banner {
   margin-top: 3rem;
-  background: linear-gradient(135deg, var(--rose-pale), var(--gold-pale));
-  border: 1px solid var(--gold-light);
+  background: linear-gradient(135deg, var(--sky-pale), var(--sky-ultra));
+  border: 1px solid var(--sky);
   padding: 2.2rem 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
 }
-
 .pix-icon { font-size: 3rem; flex-shrink: 0; }
-
-.pix-text h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  color: var(--dark);
-  margin-bottom: 0.35rem;
-}
-
-.pix-text p {
-  font-size: 0.85rem;
-  color: var(--text-light);
-  line-height: 1.55;
-}
+.pix-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.35rem; }
+.pix-text p  { font-size: 0.85rem; color: var(--text-light); line-height: 1.55; }
 
 @media (max-width: 600px) {
   .gift-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }

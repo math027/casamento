@@ -3,7 +3,7 @@
    ══════════════════════════════════════ */
 
 #data {
-  background: linear-gradient(135deg, var(--rose-pale) 0%, var(--gold-pale) 100%);
+  background: linear-gradient(135deg, var(--sky-pale) 0%, var(--sky-ultra) 100%);
   text-align: center;
 }
 
@@ -24,7 +24,7 @@
   min-width: 240px;
   max-width: 320px;
   box-shadow: var(--shadow-soft);
-  border: 1px solid var(--rose-light);
+  border: 1px solid var(--sky);
   position: relative;
   overflow: hidden;
 }
@@ -34,20 +34,17 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--rose), var(--gold));
+  background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
 }
 
-.data-card-icon {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-}
+.data-card-icon { font-size: 2.4rem; margin-bottom: 1rem; }
 
 .data-card h3 {
   font-family: 'Lato', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--blue-light);
   font-weight: 400;
   margin-bottom: 0.7rem;
 }
@@ -56,7 +53,7 @@
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
   font-weight: 300;
-  color: var(--dark);
+  color: var(--navy);
   line-height: 1.2;
 }
 
@@ -64,7 +61,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: linear-gradient(135deg, var(--rose), var(--gold));
+  background: linear-gradient(135deg, var(--blue-mid), var(--blue-light));
   color: #fff;
   font-size: 0.62rem;
   letter-spacing: 0.22em;
@@ -79,7 +76,7 @@
   margin: 0 auto;
   background: var(--white);
   padding: 2.2rem 2.8rem;
-  border-left: 3px solid var(--rose);
+  border-left: 3px solid var(--blue-mid);
   box-shadow: var(--shadow-soft);
 }
 
@@ -88,13 +85,10 @@
   font-style: italic;
   font-size: 1.15rem;
   line-height: 1.82;
-  color: var(--text);
+  color: var(--text-mid);
 }
 
-.data-message strong {
-  color: var(--rose);
-  font-style: normal;
-}
+.data-message strong { color: var(--blue-mid); font-style: normal; }
 
 @media (max-width: 680px) {
   .data-card { padding: 2rem 1.8rem; }

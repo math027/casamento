@@ -1,0 +1,127 @@
+/* ══════════════════════════════════════
+   MANUAL DOS CONVIDADOS
+   ══════════════════════════════════════ */
+
+#manual { background: var(--navy); }
+
+#manual .section-tag   { color: var(--sky); }
+#manual .section-title { color: var(--white); }
+#manual .gold-line {
+  background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
+}
+
+.manual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.manual-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(91,159,232,0.22);
+  padding: 2.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s;
+}
+.manual-card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--blue-light);
+  transform: translateY(-3px);
+}
+.manual-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
+}
+
+.manual-card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.1rem;
+  display: block;
+}
+
+.manual-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+
+.manual-card-content {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+}
+
+.manual-card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.manual-card-content ul li::before {
+  content: '·';
+  color: var(--blue-light);
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Dress code swatches */
+.dress-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.dress-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: default;
+}
+
+.dress-swatch {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: transform 0.2s;
+}
+.dress-option:hover .dress-swatch { transform: scale(1.15); }
+
+.dress-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+/* "Proibido" card accent */
+.manual-card.proibido::before {
+  background: linear-gradient(90deg, #c0392b, var(--blue-mid));
+}
+
+.manual-card.proibido h3 { color: #ffb3b0; }
+
+.manual-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: rgba(255,255,255,0.35);
+  padding: 3rem 0;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 680px) {
+  .manual-grid { grid-template-columns: 1fr; }
+}
