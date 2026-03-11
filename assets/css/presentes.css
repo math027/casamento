@@ -1,0 +1,410 @@
+/* ══════════════════════════════════════
+   PRESENTES · estilo loja virtual
+   ══════════════════════════════════════ */
+
+#presentes { background: var(--white); }
+
+.presentes-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: var(--text-light);
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+
+/* ── Store toolbar ── */
+.store-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--rose-light);
+}
+
+.store-count {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.store-count strong { color: var(--rose); }
+
+.store-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--dark);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  transition: background var(--transition);
+}
+.store-cart-btn:hover { background: var(--rose); }
+
+.cart-badge {
+  background: var(--rose);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 1.3rem; height: 1.3rem;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+
+/* ── Product Grid ── */
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ── Product Card ── */
+.gift-card {
+  background: var(--white);
+  border: 1px solid #ecddd5;
+  transition: all 0.35s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.gift-card:hover {
+  border-color: var(--rose);
+  box-shadow: 0 16px 48px rgba(201,137,106,0.16);
+  transform: translateY(-4px);
+}
+
+/* Tag badge */
+.gift-badge {
+  position: absolute;
+  top: 1rem; left: 0;
+  background: linear-gradient(90deg, var(--rose), var(--gold));
+  color: #fff;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.9rem 0.28rem 0.7rem;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 10px) 50%, 100% 100%, 0 100%);
+  z-index: 2;
+}
+
+/* "Reservado" stamp */
+.gift-reserved-stamp {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248,237,232,0.82);
+  z-index: 5;
+  backdrop-filter: blur(2px);
+}
+.gift-reserved-stamp .stamp {
+  border: 3px solid var(--rose);
+  color: var(--rose);
+  padding: 0.6rem 1.5rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  transform: rotate(-12deg);
+  opacity: 0.92;
+}
+.gift-card.reserved .gift-reserved-stamp { display: flex; }
+
+/* Product image */
+.gift-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--rose-pale);
+  position: relative;
+}
+
+.gift-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+.gift-card:hover .gift-img-wrap img { transform: scale(1.06); }
+
+.gift-emoji-thumb {
+  position: absolute;
+  bottom: 0.7rem; right: 0.8rem;
+  font-size: 1.8rem;
+  background: rgba(255,255,255,0.88);
+  border-radius: 50%;
+  width: 2.6rem; height: 2.6rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  z-index: 2;
+}
+
+/* Product info */
+.gift-info {
+  padding: 1.4rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.gift-category {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.gift-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.35;
+}
+
+.gift-desc {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* Price + CTA */
+.gift-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--rose-pale);
+  gap: 0.8rem;
+}
+
+.gift-price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.gift-price-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.gift-price-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1;
+}
+
+.gift-price-value.symbolic {
+  font-size: 1.1rem;
+  color: var(--rose);
+  font-style: italic;
+}
+
+.gift-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--rose);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.gift-btn:hover { background: var(--rose-dark); }
+.gift-card.reserved .gift-btn {
+  background: #ccc;
+  cursor: default;
+}
+.gift-card.reserved .gift-btn:hover { background: #ccc; }
+
+/* ── Cart Modal ── */
+.cart-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(45,34,32,0.5);
+  z-index: 8000;
+  display: none;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.cart-modal-overlay.open { display: flex; }
+
+.cart-modal {
+  background: var(--white);
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: slideInRight 0.35s ease;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rose-light);
+}
+
+.cart-header h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: var(--dark);
+}
+
+.cart-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: color var(--transition);
+}
+.cart-close:hover { color: var(--rose); }
+
+.cart-items { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--rose-light);
+  background: var(--rose-pale);
+}
+
+.cart-item img {
+  width: 64px; height: 64px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cart-item-info { flex: 1; }
+.cart-item-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+.cart-item-price {
+  font-size: 0.8rem;
+  color: var(--rose);
+  margin-top: 0.25rem;
+}
+
+.cart-remove {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color var(--transition);
+}
+.cart-remove:hover { color: var(--rose); }
+
+.cart-empty {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  padding: 3rem 0;
+}
+
+.cart-total {
+  padding-top: 1rem;
+  border-top: 1px solid var(--rose-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-total span {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+.cart-total strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.cart-pix {
+  background: var(--rose-pale);
+  border-left: 3px solid var(--rose);
+  padding: 1rem 1.2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* ── Pix Banner ── */
+.pix-banner {
+  margin-top: 3rem;
+  background: linear-gradient(135deg, var(--rose-pale), var(--gold-pale));
+  border: 1px solid var(--gold-light);
+  padding: 2.2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.pix-icon { font-size: 3rem; flex-shrink: 0; }
+
+.pix-text h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--dark);
+  margin-bottom: 0.35rem;
+}
+
+.pix-text p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.55;
+}
+
+@media (max-width: 600px) {
+  .gift-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .cart-modal { max-width: 100%; }
+  .pix-banner { padding: 1.5rem; flex-direction: column; text-align: center; }
+}

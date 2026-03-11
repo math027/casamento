@@ -1,0 +1,69 @@
+/* ══════════════════════════════════════
+   GALERIA
+   ══════════════════════════════════════ */
+
+#galeria {
+  background: var(--dark);
+  padding-bottom: 5.5rem;
+}
+
+#galeria .section-tag   { color: var(--rose-light); }
+#galeria .section-title { color: var(--white); }
+#galeria .gold-line {
+  background: linear-gradient(90deg, var(--rose), var(--gold));
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: var(--dark-mid);
+}
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  min-height: 180px;
+  display: block;
+  transition: transform 0.65s ease;
+}
+.gallery-item:hover img { transform: scale(1.07); }
+
+.gallery-item .gi-overlay {
+  position: absolute; inset: 0;
+  background: rgba(45,34,32,0);
+  transition: background 0.4s;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.4rem;
+}
+.gallery-item:hover .gi-overlay { background: rgba(45,34,32,0.42); }
+
+.gallery-caption {
+  font-family: 'Great Vibes', cursive;
+  color: #fff;
+  font-size: 1.7rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 680px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gallery-item.wide { grid-column: span 1; }
+  .gallery-item.tall { grid-row: span 1; }
+}

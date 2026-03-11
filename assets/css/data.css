@@ -1,0 +1,102 @@
+/* ══════════════════════════════════════
+   DATA & LOCAL
+   ══════════════════════════════════════ */
+
+#data {
+  background: linear-gradient(135deg, var(--rose-pale) 0%, var(--gold-pale) 100%);
+  text-align: center;
+}
+
+#data .gold-line { margin-left: auto; margin-right: auto; }
+
+.data-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.data-card {
+  background: var(--white);
+  padding: 2.8rem 3rem;
+  flex: 1;
+  min-width: 240px;
+  max-width: 320px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--rose-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.data-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rose), var(--gold));
+}
+
+.data-card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.data-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+  margin-bottom: 0.7rem;
+}
+
+.data-card .value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.tbd-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+  color: #fff;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 50px;
+  margin-top: 0.7rem;
+}
+
+.data-message {
+  max-width: 540px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 2.2rem 2.8rem;
+  border-left: 3px solid var(--rose);
+  box-shadow: var(--shadow-soft);
+}
+
+.data-message p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.82;
+  color: var(--text);
+}
+
+.data-message strong {
+  color: var(--rose);
+  font-style: normal;
+}
+
+@media (max-width: 680px) {
+  .data-card { padding: 2rem 1.8rem; }
+  .data-message { padding: 1.8rem 1.5rem; }
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matheus &amp; Emmily 💍</title>
+  <meta name="description" content="Casamento de Matheus e Emmily — Em breve!">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/historia.css">
+  <link rel="stylesheet" href="assets/css/data.css">
+  <link rel="stylesheet" href="assets/css/galeria.css">
+  <link rel="stylesheet" href="assets/css/contador.css">
+  <link rel="stylesheet" href="assets/css/presentes.css">
+  <link rel="stylesheet" href="assets/css/confirmar.css">
+</head>
+<body>
+
+<!-- ────────────────────────────────────────
+     LIGHTBOX
+──────────────────────────────────────── -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ────────────────────────────────────────
+     CART MODAL
+──────────────────────────────────────── -->
+<div class="cart-modal-overlay" id="cart-overlay">
+  <div class="cart-modal">
+    <div class="cart-header">
+      <h3>Lista de Presentes</h3>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="cart-empty">Sua lista está vazia por enquanto... 🌸</p>
+    </div>
+    <div class="cart-total">
+      <span>Total sugerido</span>
+      <strong id="cart-total-val">R$ 0</strong>
+    </div>
+    <div class="cart-pix">
+      💝 <strong>Pix e dados bancários</strong> serão divulgados junto com os detalhes do casamento em breve!
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────────────
+     NAV
+──────────────────────────────────────── -->
+<nav>
+  <a href="#hero">Início</a>
+  <a href="#historia">Nossa História</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#data">Data &amp; Local</a>
+  <a href="#presentes">Presentes</a>
+  <a href="#confirmar">Confirmação</a>
+</nav>
+
+<!-- ────────────────────────────────────────
+     HERO
+──────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="petals-container" id="petals"></div>
+
+  <div class="hero-content">
+    <p class="hero-pre">Você está convidado para o casamento de</p>
+    <h1 class="hero-names">Matheus<br>&amp;<br>Emmily</h1>
+    <div class="hero-divider">
+      <span class="line"></span>
+      <span class="heart">♡</span>
+      <span class="line"></span>
+    </div>
+    <p class="hero-date">Em breve · Em um lugar muito especial</p>
+    <span class="hero-badge">📅 Data a confirmar · Fique de olho!</span>
+  </div>
+
+  <div class="hero-scroll">↓</div>
+</section>
+
+<!-- ────────────────────────────────────────
+     NOSSA HISTÓRIA
+──────────────────────────────────────── -->
+<section id="historia">
+  <div class="section-inner">
+    <span class="section-tag">Como nos encontramos</span>
+    <h2 class="section-title">Nossa História</h2>
+    <div class="gold-line"></div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">O começo de tudo</p>
+        <h3>Um story de unhas vermelhas</h3>
+        <p>
+          Tudo começou com uma nail art vermelha postada no story. Matheus, sem saber que estava mudando sua vida para sempre, respondeu:
+          <em>"Esse vermelho é meu tom preferido, ficou lindo em você."</em>
+          Uma mensagem simples que abriu a porta de uma história linda.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">Primeiro encontro</p>
+        <h3>O café que o tempo não deixou acontecer</h3>
+        <p>
+          Marcaram um café da tarde — mas a chuva tinha outros planos. Às vezes o universo atrasa o que não quer apressar. A ansiedade ficou, o encontro ficou para depois.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">No Tyler e na praia</p>
+        <h3>Quando os olhos falaram primeiro</h3>
+        <p>
+          Quando finalmente se encontraram, Matheus já olhava para Emmily todo apaixonado — mesmo tentando disfarçar. A praia, o sol e a brisa fizeram o trabalho deles.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">14 de dezembro de 2024</p>
+        <h3>O beijo e o sim ♡</h3>
+        <p>
+          No terceiro encontro, aconteceu o tão esperado beijo, junto com o pedido de namoro. Uma data que ficou gravada para sempre em dois corações que se encontraram.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-year">E agora...</p>
+        <h3>Do story ao altar</h3>
+        <p>
+          Do vermelho das unhas ao véu branco. Em breve eles dirão <em>"sim"</em> para uma vida inteira juntos, diante de Deus e de todos que amam. ♡
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────
+     DATA & LOCAL
+──────────────────────────────────────── -->
+<section id="data">
+  <div class="section-inner">
+    <span class="section-tag">A grande celebração</span>
+    <h2 class="section-title">Data &amp; Local</h2>
+    <div class="gold-line"></div>
+
+    <div class="data-cards">
+      <div class="data-card">
+        <div class="data-card-icon">📅</div>
+        <h3>Data</h3>
+        <div class="value">A definir</div>
+        <span class="tbd-pill">🗓 Em breve</span>
+      </div>
+      <div class="data-card">
+        <div class="data-card-icon">📍</div>
+        <h3>Local</h3>
+        <div class="value">A definir</div>
+        <span class="tbd-pill">📌 Em breve</span>
+      </div>
+      <div class="data-card">
+        <div class="data-card-icon">💌</div>
+        <h3>Convite</h3>
+        <div class="value">A enviar</div>
+        <span class="tbd-pill">✉ Em breve</span>
+      </div>
+    </div>
+
+    <div class="data-message">
+      <p>
+        <strong>"A data e o local estão sendo preparados com muito carinho e oração."</strong><br><br>
+        Em breve traremos todos os detalhes para você. Por enquanto, guarde um espaço no coração — e na agenda! Prometemos que vai valer cada segundo da espera. ♡
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────
+     GALERIA
+──────────────────────────────────────── -->
+<section id="galeria">
+  <div class="section-inner">
+    <span class="section-tag">Nossos momentos</span>
+    <h2 class="section-title">Galeria</h2>
+    <div class="gold-line"></div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item tall" onclick="openLightbox(this)">
+        <img src="assets/img/galeria/pa_beijo.jpg" alt="Beijo">
+        <div class="gi-overlay"><span class="gallery-caption">Amor</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="assets/img/galeria/pa_selfie2.jpg" alt="Nós">
+        <div class="gi-overlay"><span class="gallery-caption">Nós ♡</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="assets/img/galeria/garajao.jpg" alt="Garajão">
+        <div class="gi-overlay"><span class="gallery-caption">Fofa ❤️</span></div>
+      </div>
+      <div class="gallery-item wide" onclick="openLightbox(this)">
+        <img src="assets/img/galeria/praia.jpg" alt="Praia" style="min-height:260px;">
+        <div class="gi-overlay"><span class="gallery-caption">Nossa Praia</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="assets/img/galeria/pa_selfie.jpg" alt="Selfie">
+        <div class="gi-overlay"><span class="gallery-caption">Juntos</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="assets/img/galeria/pa_pedra.jpg" alt="Pedra">
+        <div class="gi-overlay"><span class="gallery-caption">Aventura</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="assets/img/galeria/pa_selfie3.jpg" alt="Sorriso">
+        <div class="gi-overlay"><span class="gallery-caption">Sorriso</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="assets/img/galeria/pa_pedra_abraco.jpg" alt="Abraço">
+        <div class="gi-overlay"><span class="gallery-caption">Abraço</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────
+     CONTADOR
+──────────────────────────────────────── -->
+<section id="contador">
+  <div class="section-inner">
+    <span class="section-tag">Desde o nosso sim</span>
+    <h2 class="section-title">Nosso Tempo</h2>
+    <div class="gold-line"></div>
+
+    <div class="counter-grid">
+      <div class="counter-item">
+        <div class="counter-num" id="c-dias">0</div>
+        <div class="counter-label">Dias</div>
+      </div>
+      <div class="counter-sep">·</div>
+      <div class="counter-item">
+        <div class="counter-num" id="c-horas">00</div>
+        <div class="counter-label">Horas</div>
+      </div>
+      <div class="counter-sep">·</div>
+      <div class="counter-item">
+        <div class="counter-num" id="c-min">00</div>
+        <div class="counter-label">Minutos</div>
+      </div>
+      <div class="counter-sep">·</div>
+      <div class="counter-item">
+        <div class="counter-num" id="c-seg">00</div>
+        <div class="counter-label">Segundos</div>
+      </div>
+    </div>
+
+    <p class="counter-since">desde 14 de dezembro de 2024 ♡</p>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────
+     PRESENTES
+──────────────────────────────────────── -->
+<section id="presentes">
+  <div class="section-inner">
+    <span class="section-tag">Lista de presentes</span>
+    <h2 class="section-title">Nos Surpreenda</h2>
+    <div class="gold-line"></div>
+
+    <p class="presentes-intro">
+      Sua presença já é o melhor presente do mundo. Mas já que você insiste... 
+      preparamos uma listinha especial com muito humor e carinho. Clique em "Reservar" 
+      para guardar um presente e veja sua lista no carrinho! 🎁
+    </p>
+
+    <!-- Store toolbar -->
+    <div class="store-toolbar">
+      <span class="store-count">
+        <strong id="store-reserved-count">0</strong> itens reservados
+      </span>
+      <button class="store-cart-btn" onclick="openCart()">
+        🎁 Ver lista
+        <span class="cart-badge" id="cart-badge">0</span>
+      </button>
+    </div>
+
+    <!-- Product grid (rendered by JS) -->
+    <div class="gift-grid" id="gift-grid"></div>
+
+    <!-- Pix banner -->
+    <div class="pix-banner">
+      <div class="pix-icon">💝</div>
+      <div class="pix-text">
+        <h4>Prefere contribuir com Pix?</h4>
+        <p>Os dados bancários serão divulgados em breve, junto com todos os detalhes do casamento. Qualquer contribuição, grande ou pequena, será recebida com muito amor e gratidão!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────
+     CONFIRMAR PRESENÇA
+──────────────────────────────────────── -->
+<section id="confirmar">
+  <div class="section-inner">
+    <div style="text-align:center; margin-bottom:2.5rem;">
+      <span class="section-tag">Você vem, né?</span>
+      <h2 class="section-title">Confirmação de Presença</h2>
+      <div class="gold-line"></div>
+    </div>
+
+    <div style="display:flex; justify-content:center;">
+      <div class="rsvp-box">
+        <p class="rsvp-note">
+          A data e o local serão revelados em breve! Por enquanto, nos deixe saber seu nome para que possamos te avisar quando os detalhes estiverem prontos. Prometemos que vai valer a espera. ♡
+        </p>
+        <div class="rsvp-form">
+          <input type="text"  id="rsvp-nome" placeholder="Seu nome completo">
+          <input type="tel"   id="rsvp-tel"  placeholder="WhatsApp (para receber os detalhes)">
+          <select id="rsvp-conf">
+            <option value="">Confirmação de presença...</option>
+            <option value="sim">✅ Sim, com certeza!</option>
+            <option value="talvez">🤔 Provavelmente sim</option>
+            <option value="nao">💔 Infelizmente não poderei ir</option>
+          </select>
+          <button class="rsvp-btn" onclick="submitRSVP()">Confirmar Presença</button>
+        </div>
+        <p class="rsvp-success" id="rsvp-success"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────────────
+     FOOTER
+──────────────────────────────────────── -->
+<footer>
+  <span class="footer-names">Matheus &amp; Emmily</span>
+  <span class="footer-heart">♡</span>
+  <p>Do story ao altar · 2024 — para sempre</p>
+  <p style="margin-top:0.5rem; font-size:0.65rem;">Feito com amor para o nosso dia mais especial</p>
+</footer>
+
+<!-- ────────────────────────────────────────
+     SCRIPTS
+──────────────────────────────────────── -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/contador.js"></script>
+<script src="assets/js/presentes.js"></script>
+
+</body>
+</html>
